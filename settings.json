@@ -1,0 +1,93 @@
+{
+  "pin": "1907",
+  "secretPin": "0704",
+  "coupleNames": {
+    "personA": "Elif",
+    "personB": "Ahmet"
+  },
+  "relationshipStartDate": "2021-07-19T00:00:00",
+  "theme": {
+    "mode": "dark",
+    "accentColor": "#D4AF37",
+    "secondaryColor": "#E8B4B8"
+  },
+  "animations": {
+    "enabled": true,
+    "floatingHearts": true,
+    "reducedMotion": false
+  },
+  "music": {
+    "autoplay": false,
+    "defaultVolume": 0.6,
+    "playlist": [
+      {
+        "id": "track-01",
+        "title": "Bizim Şarkımız",
+        "artist": "Elif & Ahmet",
+        "src": "music/bizim-sarkimiz.mp3",
+        "cover": "icons/icon-192.png",
+        "duration": 8
+      },
+      {
+        "id": "track-02",
+        "title": "İlk Dansımız",
+        "artist": "Elif & Ahmet",
+        "src": "music/ilk-dans.mp3",
+        "cover": "icons/icon-192.png",
+        "duration": 8
+      },
+      {
+        "id": "track-03",
+        "title": "Mutlu Yıllar Aşkım",
+        "artist": "Elif & Ahmet",
+        "src": "music/mutlu-yillar.mp3",
+        "cover": "icons/icon-192.png",
+        "duration": 8
+      }
+    ]
+  },
+  "specialDays": [
+    {
+      "id": "valentine",
+      "name": "Sevgililer Günü",
+      "date": "02-14",
+      "message": "İyi ki hayatımdasın aşkım ❤️",
+      "effect": "hearts"
+    },
+    {
+      "id": "anniversary",
+      "name": "Yıl Dönümümüz",
+      "date": "07-19",
+      "message": "Birlikte bir yıl daha aşkım! Seni çok seviyorum ❤️",
+      "effect": "confetti"
+    },
+    {
+      "id": "birthday-a",
+      "name": "Elif'in Doğum Günü",
+      "date": "03-12",
+      "message": "İyi ki doğdun canım aşkım 🎂",
+      "effect": "confetti"
+    },
+    {
+      "id": "birthday-b",
+      "name": "Ahmet'in Doğum Günü",
+      "date": "11-05",
+      "message": "İyi ki doğdun canım aşkım 🎂",
+      "effect": "confetti"
+    },
+    {
+      "id": "christmas",
+      "name": "Noel",
+      "date": "12-25",
+      "message": "Mutlu Noeller aşkım ❄️",
+      "effect": "snow"
+    },
+    {
+      "id": "newyear",
+      "name": "Yılbaşı",
+      "date": "01-01",
+      "message": "Yeni yılımız kutlu olsun aşkım 🎆",
+      "effect": "fireworks"
+    }
+  ]
+}

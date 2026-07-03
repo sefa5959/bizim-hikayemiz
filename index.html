@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=1, user-scalable=no" />
+<title>Bizim Hikayemiz ❤️</title>
+<meta name="description" content="Sadece ikimize ait, aşkımızın dijital hatıra defteri." />
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json" />
+<meta name="theme-color" content="#0A0814" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Hikayemiz" />
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon.png" />
+<link rel="apple-touch-startup-image" href="icons/splash-1170x2532.png" />
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Ambient animated background -->
+<div class="ambient-bg" aria-hidden="true">
+  <div class="aurora aurora-1"></div>
+  <div class="aurora aurora-2"></div>
+  <div class="aurora aurora-3"></div>
+  <div class="grain"></div>
+</div>
+<div id="floatingHearts" class="floating-hearts" aria-hidden="true"></div>
+<div id="specialEffects" class="special-effects" aria-hidden="true"></div>
+
+<!-- ========== PIN LOCK SCREEN ========== -->
+<section id="screen-pin" class="screen screen-pin active">
+  <div class="pin-card glass">
+    <div class="pin-heart" id="pinLogo">
+      <svg viewBox="0 0 32 29" class="heart-icon"><path d="M16 28.5S1 19.3 1 9.6C1 4.5 5 1 9.6 1c3 0 5.4 1.6 6.4 4 1-2.4 3.4-4 6.4-4C27 1 31 4.5 31 9.6 31 19.3 16 28.5 16 28.5Z"/></svg>
+    </div>
+    <h1 class="pin-title">Bizim Hikayemiz</h1>
+    <p class="pin-subtitle">Devam etmek için PIN kodunu gir</p>
+    <div class="pin-dots" id="pinDots">
+      <span class="pin-dot"></span>
+      <span class="pin-dot"></span>
+      <span class="pin-dot"></span>
+      <span class="pin-dot"></span>
+    </div>
+    <p class="pin-error" id="pinError">Bu uygulama sadece aşkıma ait ❤️</p>
+    <div class="pin-keypad" id="pinKeypad">
+      <button class="pin-key" data-key="1">1</button>
+      <button class="pin-key" data-key="2">2</button>
+      <button class="pin-key" data-key="3">3</button>
+      <button class="pin-key" data-key="4">4</button>
+      <button class="pin-key" data-key="5">5</button>
+      <button class="pin-key" data-key="6">6</button>
+      <button class="pin-key" data-key="7">7</button>
+      <button class="pin-key" data-key="8">8</button>
+      <button class="pin-key" data-key="9">9</button>
+      <span class="pin-key pin-key-empty"></span>
+      <button class="pin-key" data-key="0">0</button>
+      <button class="pin-key pin-key-del" data-key="del" aria-label="Sil">⌫</button>
+    </div>
+  </div>
+</section>
+
+<!-- ========== APP SHELL ========== -->
+<div id="appShell" class="app-shell">
+
+  <!-- HOME -->
+  <section id="screen-home" class="screen screen-home">
+    <header class="hero">
+      <button class="logo-tap" id="logoTap" aria-label="Logo">
+        <svg viewBox="0 0 32 29" class="heart-icon heart-icon-sm"><path d="M16 28.5S1 19.3 1 9.6C1 4.5 5 1 9.6 1c3 0 5.4 1.6 6.4 4 1-2.4 3.4-4 6.4-4C27 1 31 4.5 31 9.6 31 19.3 16 28.5 16 28.5Z"/></svg>
+      </button>
+      <p class="hero-eyebrow">İyi ki varsın</p>
+      <h1 class="hero-title">Bizim<br/>Hikayemiz</h1>
+      <p class="hero-couple" id="coupleNames">Elif &amp; Ahmet</p>
+
+      <div class="counter-ring-wrap">
+        <svg class="counter-ring" viewBox="0 0 200 200">
+          <defs>
+            <linearGradient id="ringGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#F0D878"/>
+              <stop offset="100%" stop-color="#D4AF37"/>
+            </linearGradient>
+          </defs>
+          <circle class="ring-track" cx="100" cy="100" r="88"/>
+          <circle class="ring-progress" id="ringProgress" cx="100" cy="100" r="88"/>
+        </svg>
+        <div class="counter-center">
+          <span class="counter-days" id="counterDays">0</span>
+          <span class="counter-label">gündür berabersiniz</span>
+        </div>
+      </div>
+
+      <div class="counter-breakdown" id="counterBreakdown">
+        <div class="cb-item"><span class="cb-num" id="cbHours">00</span><span class="cb-label">saat</span></div>
+        <div class="cb-item"><span class="cb-num" id="cbMinutes">00</span><span class="cb-label">dakika</span></div>
+        <div class="cb-item"><span class="cb-num" id="cbSeconds">00</span><span class="cb-label">saniye</span></div>
+      </div>
+    </header>
+
+    <div id="specialBanner" class="special-banner"></div>
+
+    <div class="home-cards">
+      <button class="nav-card glass" data-route="gallery">
+        <span class="nav-card-icon">🖼️</span>
+        <span class="nav-card-title">Anılarımız</span>
+        <span class="nav-card-sub">Fotoğraf galerisi</span>
+      </button>
+      <button class="nav-card glass" data-route="videos">
+        <span class="nav-card-icon">🎬</span>
+        <span class="nav-card-title">Videolarımız</span>
+        <span class="nav-card-sub">Özel anlarımız</span>
+      </button>
+      <button class="nav-card glass" data-route="letters">
+        <span class="nav-card-icon">💌</span>
+        <span class="nav-card-title">Mektuplarım</span>
+        <span class="nav-card-sub">Sana yazdıklarım</span>
+      </button>
+      <button class="nav-card glass" data-route="timeline">
+        <span class="nav-card-icon">🕰️</span>
+        <span class="nav-card-title">Zaman Çizelgesi</span>
+        <span class="nav-card-sub">Hikayemizin akışı</span>
+      </button>
+    </div>
+
+    <div class="home-quote glass">
+      <p>"Seninle geçirdiğim her an, kalbimin en özel sayfasına yazılıyor."</p>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section id="screen-gallery" class="screen">
+    <header class="page-header">
+      <button class="back-btn" data-route="home" aria-label="Geri">‹</button>
+      <h2>Anılarımız</h2>
+      <span class="page-header-spacer"></span>
+    </header>
+    <div class="masonry" id="masonryGrid"></div>
+  </section>
+
+  <!-- LIGHTBOX -->
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Kapat">✕</button>
+    <div class="lightbox-track" id="lightboxTrack"></div>
+    <div class="lightbox-info">
+      <h3 id="lightboxTitle"></h3>
+      <p id="lightboxDesc"></p>
+      <span id="lightboxMeta" class="lightbox-meta"></span>
+    </div>
+  </div>
+
+  <!-- VIDEOS -->
+  <section id="screen-videos" class="screen">
+    <header class="page-header">
+      <button class="back-btn" data-route="home" aria-label="Geri">‹</button>
+      <h2>Videolarımız</h2>
+      <span class="page-header-spacer"></span>
+    </header>
+    <div class="video-grid" id="videoGrid"></div>
+  </section>
+
+  <div id="videoModal" class="video-modal">
+    <button class="lightbox-close" id="videoModalClose" aria-label="Kapat">✕</button>
+    <video id="videoModalPlayer" controls playsinline></video>
+    <div class="lightbox-info">
+      <h3 id="videoModalTitle"></h3>
+      <p id="videoModalDesc"></p>
+    </div>
+  </div>
+
+  <!-- LETTERS -->
+  <section id="screen-letters" class="screen">
+    <header class="page-header">
+      <button class="back-btn" data-route="home" aria-label="Geri">‹</button>
+      <h2>Mektuplarım</h2>
+      <span class="page-header-spacer"></span>
+    </header>
+    <div class="letters-list" id="lettersList"></div>
+  </section>
+
+  <div id="letterModal" class="letter-modal">
+    <button class="lightbox-close" id="letterModalClose" aria-label="Kapat">✕</button>
+    <div class="letter-paper glass">
+      <button class="letter-fav" id="letterFavBtn" aria-label="Favori">♡</button>
+      <h3 id="letterModalTitle"></h3>
+      <span id="letterModalDate" class="letter-date"></span>
+      <p id="letterModalContent" class="letter-content"></p>
+    </div>
+  </div>
+
+  <!-- TIMELINE -->
+  <section id="screen-timeline" class="screen">
+    <header class="page-header">
+      <button class="back-btn" data-route="home" aria-label="Geri">‹</button>
+      <h2>Zaman Çizelgesi</h2>
+      <span class="page-header-spacer"></span>
+    </header>
+    <div class="timeline" id="timelineList"></div>
+  </section>
+
+  <!-- SETTINGS -->
+  <section id="screen-settings" class="screen">
+    <header class="page-header">
+      <button class="back-btn" data-route="home" aria-label="Geri">‹</button>
+      <h2>Ayarlar</h2>
+      <span class="page-header-spacer"></span>
+    </header>
+    <div class="settings-list">
+      <div class="settings-group glass">
+        <p class="settings-group-title">Görünüm</p>
+        <div class="settings-row">
+          <span>Karanlık Mod</span>
+          <label class="switch">
+            <input type="checkbox" id="themeToggle" checked />
+            <span class="switch-track"><span class="switch-thumb"></span></span>
+          </label>
+        </div>
+        <div class="settings-row">
+          <span>Animasyonlar</span>
+          <label class="switch">
+            <input type="checkbox" id="animToggle" checked />
+            <span class="switch-track"><span class="switch-thumb"></span></span>
+          </label>
+        </div>
+        <div class="settings-row">
+          <span>Uçuşan Kalpler</span>
+          <label class="switch">
+            <input type="checkbox" id="heartsToggle" checked />
+            <span class="switch-track"><span class="switch-thumb"></span></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="settings-group glass">
+        <p class="settings-group-title">İlişki</p>
+        <div class="settings-row settings-row-col">
+          <span>Başlangıç Tarihi</span>
+          <input type="date" id="relDateInput" class="settings-input" />
+        </div>
+      </div>
+
+      <div class="settings-group glass">
+        <p class="settings-group-title">Müzik</p>
+        <div class="settings-row">
+          <span>Otomatik Oynat</span>
+          <label class="switch">
+            <input type="checkbox" id="autoplayToggle" />
+            <span class="switch-track"><span class="switch-thumb"></span></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="settings-group glass">
+        <p class="settings-group-title">Güvenlik</p>
+        <div class="settings-row settings-row-col">
+          <span>PIN Kodunu Değiştir</span>
+          <div class="settings-pin-edit">
+            <input type="password" id="newPinInput" class="settings-input" maxlength="4" placeholder="Yeni PIN (4 hane)" inputmode="numeric" />
+            <button class="btn-gold" id="savePinBtn">Kaydet</button>
+          </div>
+          <p class="settings-hint" id="pinSaveHint"></p>
+        </div>
+      </div>
+
+      <button class="btn-outline" id="resetAppBtn">Ayarları Sıfırla</button>
+    </div>
+  </section>
+
+  <!-- SECRET PAGE PIN -->
+  <section id="screen-secret-pin" class="screen">
+    <div class="pin-card glass">
+      <div class="pin-heart"><svg viewBox="0 0 32 29" class="heart-icon"><path d="M16 28.5S1 19.3 1 9.6C1 4.5 5 1 9.6 1c3 0 5.4 1.6 6.4 4 1-2.4 3.4-4 6.4-4C27 1 31 4.5 31 9.6 31 19.3 16 28.5 16 28.5Z"/></svg></div>
+      <h1 class="pin-title">Gizli Sayfa</h1>
+      <p class="pin-subtitle">Bu alan çok özel. PIN kodunu gir</p>
+      <div class="pin-dots" id="secretPinDots">
+        <span class="pin-dot"></span><span class="pin-dot"></span><span class="pin-dot"></span><span class="pin-dot"></span>
+      </div>
+      <p class="pin-error" id="secretPinError">Bu uygulama sadece aşkıma ait ❤️</p>
+      <div class="pin-keypad" id="secretPinKeypad">
+        <button class="pin-key" data-key="1">1</button><button class="pin-key" data-key="2">2</button><button class="pin-key" data-key="3">3</button>
+        <button class="pin-key" data-key="4">4</button><button class="pin-key" data-key="5">5</button><button class="pin-key" data-key="6">6</button>
+        <button class="pin-key" data-key="7">7</button><button class="pin-key" data-key="8">8</button><button class="pin-key" data-key="9">9</button>
+        <span class="pin-key pin-key-empty"></span><button class="pin-key" data-key="0">0</button><button class="pin-key pin-key-del" data-key="del">⌫</button>
+      </div>
+      <button class="back-btn secret-cancel" data-route="home">Vazgeç</button>
+    </div>
+  </section>
+
+  <!-- SECRET PAGE -->
+  <section id="screen-secret" class="screen">
+    <header class="page-header">
+      <button class="back-btn" data-route="home" aria-label="Geri">‹</button>
+      <h2>Gizli Sayfa 🤫</h2>
+      <span class="page-header-spacer"></span>
+    </header>
+    <div class="secret-content glass">
+      <h3>Sana özel bir sır...</h3>
+      <p>Buraya en özel anılarını, sürprizlerini ya da sadece ikinizin bileceği bir mesajı yazabilirsin. Bu sayfaya sadece PIN kodunu bilen kişi ulaşabilir.</p>
+      <p class="secret-signature">Seni sonsuza kadar seveceğim. ❤️</p>
+    </div>
+  </section>
+
+  <!-- BOTTOM TAB BAR -->
+  <nav class="tab-bar glass" id="tabBar">
+    <button class="tab-btn active" data-route="home" aria-label="Ana Sayfa">
+      <span class="tab-icon">🏠</span><span class="tab-label">Ana Sayfa</span>
+    </button>
+    <button class="tab-btn" data-route="gallery" aria-label="Anılar">
+      <span class="tab-icon">🖼️</span><span class="tab-label">Anılar</span>
+    </button>
+    <button class="tab-btn tab-btn-center" data-route="music-sheet" aria-label="Müzik">
+      <span class="tab-icon-heart"><svg viewBox="0 0 32 29" class="heart-icon"><path d="M16 28.5S1 19.3 1 9.6C1 4.5 5 1 9.6 1c3 0 5.4 1.6 6.4 4 1-2.4 3.4-4 6.4-4C27 1 31 4.5 31 9.6 31 19.3 16 28.5 16 28.5Z"/></svg></span>
+    </button>
+    <button class="tab-btn" data-route="letters" aria-label="Mektuplar">
+      <span class="tab-icon">💌</span><span class="tab-label">Mektuplar</span>
+    </button>
+    <button class="tab-btn" data-route="settings" aria-label="Ayarlar">
+      <span class="tab-icon">⚙️</span><span class="tab-label">Ayarlar</span>
+    </button>
+  </nav>
+
+  <!-- FLOATING MUSIC PLAYER -->
+  <div class="floating-player glass" id="floatingPlayer">
+    <img src="icons/icon-192.png" alt="" class="fp-cover" id="fpCover" />
+    <div class="fp-info">
+      <span class="fp-title" id="fpTitle">Bizim Şarkımız</span>
+      <span class="fp-artist" id="fpArtist">Elif &amp; Ahmet</span>
+    </div>
+    <button class="fp-btn" id="fpPlayPause" aria-label="Oynat">▶</button>
+    <button class="fp-btn" id="fpExpand" aria-label="Genişlet">˄</button>
+  </div>
+
+  <!-- FULL MUSIC SHEET -->
+  <div class="music-sheet" id="musicSheet">
+    <div class="music-sheet-handle" id="musicSheetHandle"></div>
+    <img src="icons/icon-192.png" alt="" class="ms-cover" id="msCover" />
+    <h3 class="ms-title" id="msTitle">Bizim Şarkımız</h3>
+    <p class="ms-artist" id="msArtist">Elif &amp; Ahmet</p>
+    <input type="range" class="ms-seek" id="msSeek" min="0" max="100" value="0" />
+    <div class="ms-time-row">
+      <span id="msCurrentTime">0:00</span>
+      <span id="msDuration">0:00</span>
+    </div>
+    <div class="ms-controls">
+      <button class="ms-ctrl-btn" id="msPrev" aria-label="Önceki">⏮</button>
+      <button class="ms-ctrl-btn ms-ctrl-main" id="msPlayPause" aria-label="Oynat">▶</button>
+      <button class="ms-ctrl-btn" id="msNext" aria-label="Sonraki">⏭</button>
+    </div>
+    <div class="ms-volume-row">
+      <span>🔈</span>
+      <input type="range" class="ms-volume" id="msVolume" min="0" max="1" step="0.01" value="0.6" />
+      <span>🔊</span>
+    </div>
+    <div class="ms-playlist" id="msPlaylist"></div>
+  </div>
+
+  <!-- INSTALL PROMPT -->
+  <div class="install-toast glass" id="installToast">
+    <span>Bizim Hikayemiz'i ana ekrana ekle</span>
+    <div class="install-toast-actions">
+      <button id="installBtn" class="btn-gold">Ekle</button>
+      <button id="installDismiss" class="btn-text">Kapat</button>
+    </div>
+  </div>
+
+</div>
+
+<audio id="audioPlayer" preload="metadata"></audio>
+
+<script src="script.js"></script>
+</body>
+</html>

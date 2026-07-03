@@ -1,0 +1,178 @@
+{
+  "photos": [
+    {
+      "id": "m01",
+      "src": "photos/memory-01.jpg",
+      "title": "İlk Buluşma",
+      "description": "Seninle tanıştığım o akşam, hayatımın en güzel akşamıydı.",
+      "date": "2021-07-19",
+      "location": "Kadıköy, İstanbul",
+      "favorite": true
+    },
+    {
+      "id": "m02",
+      "src": "photos/memory-02.jpg",
+      "title": "Deniz Kenarı",
+      "description": "Elini tutup deniz kenarında yürüdüğümüz o gün hiç aklımdan çıkmıyor.",
+      "date": "2021-08-14",
+      "location": "Çeşme, İzmir",
+      "favorite": false
+    },
+    {
+      "id": "m03",
+      "src": "photos/memory-03.jpg",
+      "title": "Yaz Tatili",
+      "description": "Birlikte geçirdiğimiz ilk tatilimiz, güneş ve sen, mükemmeldi.",
+      "date": "2021-08-20",
+      "location": "Bodrum, Muğla",
+      "favorite": true
+    },
+    {
+      "id": "m04",
+      "src": "photos/memory-04.jpg",
+      "title": "Kar Manzarası",
+      "description": "Kar altında elini tutmak, dünyanın en sıcak hissi.",
+      "date": "2022-01-10",
+      "location": "Uludağ, Bursa",
+      "favorite": false
+    },
+    {
+      "id": "m05",
+      "src": "photos/memory-05.jpg",
+      "title": "Doğum Günün",
+      "description": "Senin gülüşün, en güzel doğum günü hediyesi.",
+      "date": "2022-03-12",
+      "location": "Beşiktaş, İstanbul",
+      "favorite": true
+    },
+    {
+      "id": "m06",
+      "src": "photos/memory-06.jpg",
+      "title": "Kahve Molası",
+      "description": "Sıradan bir öğleden sonra, seninle asla sıradan değil.",
+      "date": "2022-05-02",
+      "location": "Moda, İstanbul",
+      "favorite": false
+    },
+    {
+      "id": "m07",
+      "src": "photos/memory-07.jpg",
+      "title": "Gün Batımı",
+      "description": "Gökyüzü ne kadar güzel olursa olsun, senin gözlerin daha güzel.",
+      "date": "2022-06-18",
+      "location": "Ayvalık, Balıkesir",
+      "favorite": true
+    },
+    {
+      "id": "m08",
+      "src": "photos/memory-08.jpg",
+      "title": "Şehir Turu",
+      "description": "Seninle kaybolmak, yol bulmaktan daha güzel.",
+      "date": "2022-09-25",
+      "location": "Sultanahmet, İstanbul",
+      "favorite": false
+    },
+    {
+      "id": "m09",
+      "src": "photos/memory-09.jpg",
+      "title": "Piknik Günü",
+      "description": "Çimenlerin üzerinde, sadece sen ve ben.",
+      "date": "2023-04-30",
+      "location": "Emirgan Korusu, İstanbul",
+      "favorite": true
+    },
+    {
+      "id": "m10",
+      "src": "photos/memory-10.jpg",
+      "title": "Yıldızlar Altında",
+      "description": "Gökyüzündeki her yıldız, seninle geçirdiğim bir anı gibi parlıyor.",
+      "date": "2023-07-19",
+      "location": "Şile, İstanbul",
+      "favorite": true
+    }
+  ],
+  "videos": [
+    {
+      "id": "v01",
+      "src": "videos/video-01.mp4",
+      "poster": "videos/poster-01.jpg",
+      "title": "İlk Dansımız",
+      "description": "O gece dans ederken zaman durmuştu.",
+      "date": "2021-12-31"
+    },
+    {
+      "id": "v02",
+      "src": "videos/video-02.mp4",
+      "poster": "videos/poster-02.jpg",
+      "title": "Yolculuk Anılarımız",
+      "description": "Yollarda geçirdiğimiz saatler, en güzel sohbetlerimize sahne oldu.",
+      "date": "2022-08-05"
+    },
+    {
+      "id": "v03",
+      "src": "videos/video-03.mp4",
+      "poster": "videos/poster-03.jpg",
+      "title": "Kutlama Anımız",
+      "description": "Yıl dönümümüzü kutladığımız o özel gece.",
+      "date": "2023-07-19"
+    }
+  ],
+  "timeline": [
+    {
+      "id": "t01",
+      "date": "2021-07-19",
+      "title": "Tanıştık",
+      "description": "Hayatımın en güzel hikayesi o gün başladı.",
+      "icon": "heart"
+    },
+    {
+      "id": "t02",
+      "date": "2021-08-01",
+      "title": "İlk Randevumuz",
+      "description": "Birbirimize ilk kez 'evet' dediğimiz an.",
+      "icon": "coffee"
+    },
+    {
+      "id": "t03",
+      "date": "2021-10-15",
+      "title": "Resmi Olarak Birlikteyiz",
+      "description": "Artık resmen bir çiftiz, ve bu inanılmaz hissettiriyor.",
+      "icon": "ring"
+    },
+    {
+      "id": "t04",
+      "date": "2022-03-12",
+      "title": "İlk Doğum Günün",
+      "description": "Seninle kutladığım ilk doğum günün, unutulmazdı.",
+      "icon": "cake"
+    },
+    {
+      "id": "t05",
+      "date": "2022-08-20",
+      "title": "İlk Tatilimiz",
+      "description": "Birlikte çıktığımız ilk büyük yolculuk.",
+      "icon": "plane"
+    },
+    {
+      "id": "t06",
+      "date": "2023-07-19",
+      "title": "2. Yıl Dönümümüz",
+      "description": "İki yıl oldu ama daha ilk günkü gibi seviyorum seni.",
+      "icon": "star"
+    },
+    {
+      "id": "t07",
+      "date": "2024-07-19",
+      "title": "3. Yıl Dönümümüz",
+      "description": "Her geçen yıl seni daha çok seviyorum.",
+      "icon": "star"
+    },
+    {
+      "id": "t08",
+      "date": "2025-07-19",
+      "title": "4. Yıl Dönümümüz",
+      "description": "Sen benim en güzel alışkanlığımsın.",
+      "icon": "star"
+    }
+  ]
+}

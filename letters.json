@@ -1,0 +1,46 @@
+{
+  "letters": [
+    {
+      "id": "l01",
+      "title": "Sana İlk Mektubum",
+      "date": "2021-08-01",
+      "favorite": true,
+      "content": "Sevgili aşkım,\n\nSeninle tanıştığım günden beri hayatım tamamen değişti. Gülüşün, gözlerindeki o parıltı, sesindeki sıcaklık... Her şey bana bu hayatta doğru yerde olduğumu hissettiriyor.\n\nHer sabah uyandığımda seni düşünüyorum ve bu beni gülümsetiyor. Umarım bu hikaye hiç bitmez.\n\nSeni seviyorum.\n\n- Sonsuza kadar senin"
+    },
+    {
+      "id": "l02",
+      "title": "Yıl Dönümümüze",
+      "date": "2022-07-19",
+      "favorite": true,
+      "content": "Canım benim,\n\nBir yıl oldu, inanabiliyor musun? Seninle geçirdiğim her an, bir kitabın en güzel sayfaları gibi.\n\nBirlikte güldük, birlikte ağladık, birlikte büyüdük. Ve bugün, geçen yıla göre seni çok daha fazla seviyorum.\n\nBu sadece başlangıç, biliyorum. Önümüzde daha nice yıllar, nice anılar var.\n\nİyi ki varsın."
+    },
+    {
+      "id": "l03",
+      "title": "Zor Bir Günde",
+      "date": "2022-11-03",
+      "favorite": false,
+      "content": "Aşkım,\n\nBugün zor bir gündü ama senin sesini duyduğumda her şey daha kolay hale geldi. Yanımda olduğun için, beni dinlediğin için teşekkür ederim.\n\nSen benim güvenli limanımsın. Fırtına ne kadar sert eserse essin, sende her zaman huzur buluyorum.\n\nSeni çok seviyorum."
+    },
+    {
+      "id": "l04",
+      "title": "Doğum Günün İçin",
+      "date": "2023-03-12",
+      "favorite": true,
+      "content": "Sevgili doğum günü kızım,\n\nBugün senin günün ve dünyaya geldiğin için çok mutluyum. Sen olmasaydın hayatım bu kadar renkli olmazdı.\n\nHer yaşın, her yeni yılın, seninle birlikte kutlamak istediğim bir hediye.\n\nNice mutlu yıllara, birlikte."
+    },
+    {
+      "id": "l05",
+      "title": "Sıradan Bir Salı",
+      "date": "2023-09-14",
+      "favorite": false,
+      "content": "Merhaba güzelim,\n\nBugün özel bir gün değil, sadece sıradan bir salı. Ama seninle olan her gün benim için özel.\n\nBirlikte kahve içmek, gülüşmek, hiçbir şey konuşmadan sessizce oturmak bile... Hepsi çok değerli benim için.\n\nSeninle sıradan anlar bile sihirli oluyor."
+    },
+    {
+      "id": "l06",
+      "title": "Geleceğe Dair",
+      "date": "2024-01-01",
+      "favorite": true,
+      "content": "Aşkım,\n\nYeni bir yıla girerken, seninle kuracağımız geleceği düşünüyorum. Hayallerimiz, planlarımız, birlikte yaşayacağımız her şey...\n\nSenin elini tutarak yürümek istediğim bir yol var önümde ve bu yolun her adımında yanımda olmanı istiyorum.\n\nBu yıl da, önümüzdeki her yıl da, seninle olmak istiyorum.\n\nSeni sonsuza kadar seveceğim."
+    }
+  ]
+}
