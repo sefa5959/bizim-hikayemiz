@@ -692,6 +692,8 @@ function renderTimeline() {
 /* =========================================================
    MUSIC PLAYER
    ========================================================= */
+const [isOpen, setIsOpen] = useState(false);
+
 const audio = () => document.getElementById("audioPlayer");
 
 function initMusicPlayer() {
@@ -725,10 +727,18 @@ function initMusicPlayer() {
   renderPlaylist(playlist);
 
   document.getElementById("floatingPlayer").addEventListener("click", (e) => {
-    if (e.target.closest("#fpPlayPause") || e.target.closest("#fpExpand")) return;
-    openMusicSheet();
-  });
+  if (e.target.closest("#fpPlayPause")) return;
 
+  if (e.target.closest("#fpExpand")) {
+    openMusicSheet();
+    return;
+  }
+
+  if (!isOpen) {
+    openMusicSheet();
+  }
+});
+   
   setTimeout(() => document.getElementById("floatingPlayer").classList.add("visible"), 600);
 }
 
@@ -813,10 +823,15 @@ function formatTime(sec) {
   return `${m}:${String(s).padStart(2, "0")}`;
 }
 
+let isOpen = false;
+
 function openMusicSheet() {
+  isOpen = true;
   document.getElementById("musicSheet").classList.add("active");
 }
+
 function closeMusicSheet() {
+  isOpen = false;
   document.getElementById("musicSheet").classList.remove("active");
 }
 
