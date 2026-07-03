@@ -3,6 +3,9 @@
 /* =========================================================
    Bizim Hikayemiz — Application Logic
    ========================================================= */
+let pin = "";
+const correctPin = "1234";
+
 
 const App = {
   settings: null,
@@ -77,7 +80,20 @@ function getEffectiveHearts() {
     ? App.overrides.heartsEnabled
     : App.settings.animations.floatingHearts;
 }
+document.querySelectorAll(".pin-key").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const key = btn.dataset.key;
 
+    if (key === "del") {
+      pin = pin.slice(0, -1);
+    } else {
+      if (pin.length < 4) pin += key;
+    }
+
+    updateDots();
+    checkPin();
+  });
+});
 /* =========================================================
    PIN LOGIN
    ========================================================= */
@@ -146,6 +162,21 @@ function unlockApp() {
   startCounters();
   startFloatingHearts();
   checkSpecialDay();
+}
+  dots.forEach((dot, i) => {
+    dot.classList.toggle("active", i < pin.length);
+  });
+}
+function checkPin() {
+  if (pin === correctPin) {
+    document.getElementById("screen-pin").classList.remove("active");
+  }
+
+  if (pin.length === 4 && pin !== correctPin) {
+    document.getElementById("pinError").style.display = "block";
+    pin = "";
+    updateDots();
+  }
 }
 
 /* =========================================================
