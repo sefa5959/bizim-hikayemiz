@@ -2,8 +2,8 @@
   "pin": "1907",
   "secretPin": "0704",
   "coupleNames": {
-    "personA": "Elif",
-    "personB": "Ahmet"
+    "personA": "Aygül",
+    "personB": "Sefa"
   },
   "relationshipStartDate": "2021-07-19T00:00:00",
   "theme": {
@@ -23,7 +23,7 @@
       {
         "id": "track-01",
         "title": "Bizim Şarkımız",
-        "artist": "Elif & Ahmet",
+        "artist": "Aygül & Sefa",
         "src": "music/bizim-sarkimiz.mp3",
         "cover": "icons/icon-192.png",
         "duration": 8
@@ -31,7 +31,7 @@
       {
         "id": "track-02",
         "title": "İlk Dansımız",
-        "artist": "Elif & Ahmet",
+        "artist": "Aygül & Sefa",
         "src": "music/ilk-dans.mp3",
         "cover": "icons/icon-192.png",
         "duration": 8
@@ -39,7 +39,7 @@
       {
         "id": "track-03",
         "title": "Mutlu Yıllar Aşkım",
-        "artist": "Elif & Ahmet",
+        "artist": "Aygül & Sefa",
         "src": "music/mutlu-yillar.mp3",
         "cover": "icons/icon-192.png",
         "duration": 8
@@ -63,14 +63,14 @@
     },
     {
       "id": "birthday-a",
-      "name": "Elif'in Doğum Günü",
+      "name": "Aygül'ün Doğum Günü",
       "date": "03-12",
       "message": "İyi ki doğdun canım aşkım 🎂",
       "effect": "confetti"
     },
     {
       "id": "birthday-b",
-      "name": "Ahmet'in Doğum Günü",
+      "name": "Sefa'nın Doğum Günü",
       "date": "11-05",
       "message": "İyi ki doğdun canım aşkım 🎂",
       "effect": "confetti"
